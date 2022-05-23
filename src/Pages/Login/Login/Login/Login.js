@@ -1,29 +1,28 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import Loading from '../../Shared/Loading/Loading';
-import google from '../../../image/google.png'
+import google from '../../../../image/google.png'
 
+import auth from '../../../../firebase.init';
+import Loading from '../../../Shared/Loading/Loading';
 
-const Register = () => {
+const Login = () => {
     const [
-        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile] = useUpdateProfile(auth);
+    ] = useSignInWithEmailAndPassword(auth);
+
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
 
     const navigate = useNavigate()
     //   hook form 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = async (data) => {
-        await createUserWithEmailAndPassword(data.email, data.password)
-        await updateProfile({ displayName: data.name })
 
+    const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password)
     };
 
     if (user || guser) {
@@ -33,40 +32,18 @@ const Register = () => {
     if (loading || gloading) {
         return <Loading></Loading>
     }
-    //hook form end
-
-
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="card-title py-3">Register Here</h2>
+                    <h2 className="card-title py-3">Log In</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {errors.exampleRequired && <span>This field is required</span>}
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Your Name</span>
-                            </label>
-                            <input type="text" placeholder="Your Name" className="input input-bordered input-error w-full max-w-xs"
-                                {...register('name', {
-                                    required: {
-                                        value: true,
-                                        message: 'Name Is reQuired'
-                                    }
-                                }
-                                )}
 
-                            />
-                            <label className="label">
-                                {errors.name?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.name.message}</span>}
-                            </label>
-
-
-                        </div>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Your Email</span>
+                                <span className="label-text">Your Password</span>
                             </label>
                             <input type="email" placeholder="Email" className="input input-bordered input-error w-full max-w-xs"
                                 {...register('email', {
@@ -133,4 +110,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;
