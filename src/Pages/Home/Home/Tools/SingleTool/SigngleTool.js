@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import Loading from '../../../../Shared/Loading/Loading';
 
 const SigngleTool = () => {
     const { id } = useParams()
     const [tool, setTool] = useState([])
 
-    const { data } = useQuery('tool', () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()).then(data => setTool(data)))
-
+    const { data, isLoading } = useQuery('tool', () => fetch(`http://localhost:5000/product/${id}`).then(res => res.json()).then(data => setTool(data)))
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     const { name, img, price, minimum, available, description, _id } = tool
 
 

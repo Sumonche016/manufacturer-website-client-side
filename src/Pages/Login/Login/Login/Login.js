@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import google from '../../../../image/google.png'
 
 import auth from '../../../../firebase.init';
@@ -25,8 +25,13 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
     };
 
+
+    // require auth 
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+
     if (user || guser) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     if (loading || gloading) {
