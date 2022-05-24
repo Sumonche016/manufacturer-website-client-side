@@ -4,7 +4,7 @@ import Loading from '../../../Shared/Loading/Loading';
 import Tool from './Tool/Tool';
 
 const Tools = () => {
-    const { data, isLoading } = useQuery('tools', () => fetch('data.json').then(res => res.json()))
+    const { data, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/product').then(res => res.json()))
     console.log(data)
     if (isLoading) {
         return <Loading></Loading>
