@@ -10,7 +10,12 @@ const Header = () => {
         signOut(auth);
     };
     const menu = <>
-        {user ? <button className='btn btn-ghost' onClick={logout}>Sign Out {user?.displayName}</button> :
+        {user ? <>
+            <button className='btn btn-ghost' onClick={logout}>Sign Out {user?.displayName}</button>
+
+
+
+        </> :
             <>
                 <li><Link to='/signup'>Sign Up</Link></li>
                 <li><Link to='/login'>Log In</Link></li>
@@ -18,6 +23,8 @@ const Header = () => {
         }
         <li><Link to='/'>Home</Link></li>
         <li><a>About</a></li>
+
+        {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
     </>
     return (
         <div className=''>

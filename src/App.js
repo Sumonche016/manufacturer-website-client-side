@@ -1,5 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import Review from './Pages/Dashboard/Review';
 import Home from './Pages/Home/Home/Home';
 import SigngleTool from './Pages/Home/Home/Tools/SingleTool/SigngleTool';
 import Login from './Pages/Login/Login/Login/Login';
@@ -8,8 +12,8 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/footer/Footer';
 import Header from './Pages/Shared/Header/Header';
-
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
@@ -25,11 +29,26 @@ const App = () => {
             <SigngleTool></SigngleTool>
           </RequireAuth>
         }></Route>
+
+
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='review' element={<Review></Review>}></Route>
+          <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+        </Route>
+
+
+
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
 
-
+      <ToastContainer />
     </div>
   );
 };
