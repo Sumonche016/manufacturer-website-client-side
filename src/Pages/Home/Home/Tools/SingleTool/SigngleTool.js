@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+
 import { useParams } from 'react-router-dom';
-import Loading from '../../../../Shared/Loading/Loading';
+
 import Modal from './Modal';
 
 

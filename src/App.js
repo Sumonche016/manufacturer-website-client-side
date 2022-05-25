@@ -14,6 +14,7 @@ import Footer from './Pages/Shared/footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Payment from './Pages/Payment/Payment';
 
 const App = () => {
   return (
@@ -43,7 +44,7 @@ const App = () => {
         </Route>
 
 
-
+        <Route path='/payment' element={<Payment></Payment>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

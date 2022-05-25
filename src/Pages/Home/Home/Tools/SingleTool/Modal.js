@@ -59,7 +59,7 @@ const Modal = ({ tool, setModal }) => {
                 if (data.acknowledged == true) {
 
                     toast('Your Order Placed Sucessfully')
-                    setModal(false)
+                    setModal(null)
 
                 }
             })
@@ -117,7 +117,7 @@ const Modal = ({ tool, setModal }) => {
 
                         <div className="form-control w-full ">
                             <label className="label">
-                                <span className="label-text">Phone Number</span>
+                                <span className="label-text">Adress</span>
                             </label>
                             <input required type="text" ref={addressRef} placeholder="Adress" className="input input-bordered input-error w-full " />
                         </div>

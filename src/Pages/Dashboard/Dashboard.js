@@ -8,7 +8,7 @@ const Dashboard = () => {
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     <Outlet></Outlet>
-                    <h1 className='text-3xl'>Dashboard </h1>
+                    {/* <h1 className='text-3xl'>Dashboard </h1> */}
 
                 </div>
                 <div className="drawer-side">
