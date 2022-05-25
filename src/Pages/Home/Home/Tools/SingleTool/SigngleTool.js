@@ -34,7 +34,7 @@ const SigngleTool = () => {
                     <p>Available : {available}pics</p>
                     <p>Price {price}$</p>
                     <div className="card-actions justify-end">
-                        <label for="my-modal-6" class="btn btn-primary w-full">Buy Now</label>
+                        <label htmlFor="my-modal-6" className="btn btn-primary w-full">Buy Now</label>
                     </div>
                 </div>
                 {modal && <Modal tool={tool} setModal={setModal}></Modal>}

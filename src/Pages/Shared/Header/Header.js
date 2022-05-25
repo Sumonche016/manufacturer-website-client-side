@@ -6,14 +6,15 @@ import auth from '../../../firebase.init';
 
 const Header = () => {
     const [user] = useAuthState(auth)
+
     const logout = () => {
         signOut(auth);
     };
+
+
     const menu = <>
         {user ? <>
             <button className='btn btn-ghost' onClick={logout}>Sign Out {user?.displayName}</button>
-
-
 
         </> :
             <>
@@ -46,10 +47,11 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

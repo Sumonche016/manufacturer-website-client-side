@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../../firebase.init';
 import { toast } from 'react-toastify';
-import { parse } from 'postcss';
+
 const Modal = ({ tool, setModal }) => {
 
     const [user] = useAuthState(auth)
@@ -10,21 +10,27 @@ const Modal = ({ tool, setModal }) => {
     const [quantity, setQuantity] = useState([])
 
 
-    const { minimum, available, _id } = tool
-    const parseMinimum = parseInt(minimum)
-    const parseAvail = parseInt(available)
+    const { _id } = tool
+    // console.log()
+    // console.log(name)
+    // console.log(tool)
 
 
 
-    const nameRef = useRef()
+
+    const usernameRef = useRef()
     const emailRef = useRef()
     const numberRef = useRef()
     const addressRef = useRef()
     const quantityRef = useRef()
+    const productnameRef = useRef()
+
+
     const handleOrder = event => {
         event.preventDefault()
         const email = emailRef.current.value;
-        const name = nameRef.current.value;
+        const name = usernameRef.current.value;
+        const productname = productnameRef.current.value;
         const number = numberRef.current.value;
         const quantity = quantityRef.current.value;
         const address = quantityRef.current.value;
@@ -35,6 +41,7 @@ const Modal = ({ tool, setModal }) => {
             phoneNumber: number,
             orderQuantity: quantity,
             userName: name,
+            productName: productname,
             address: address
 
 
@@ -59,7 +66,10 @@ const Modal = ({ tool, setModal }) => {
 
     }
 
-    const condition = quantity > parseAvail || quantity < minimum;
+    const parseMinimum = parseInt(tool?.minimum)
+    const parseAvail = parseInt(tool?.available)
+    const condition = quantity > parseAvail || quantity < parseMinimum;
+
 
 
     const handleQuantity = e => {
@@ -71,16 +81,24 @@ const Modal = ({ tool, setModal }) => {
 
     return (
         <div>
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <label for="my-modal-6" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <label htmlFor="my-modal-6" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form onSubmit={handleOrder}>
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Your Name</span>
                             </label>
-                            <input type="text" ref={nameRef} disabled value={user?.displayName} className="input input-bordered input-error w-full " />
+                            <input type="text" ref={usernameRef} disabled value={user?.displayName} className="input input-bordered input-error w-full " />
+                        </div>
+
+
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">Product Name</span>
+                            </label>
+                            <input type="text" ref={productnameRef} disabled value={tool?.name} className="input input-bordered input-error w-full " />
                         </div>
 
                         <div className="form-control w-full ">
@@ -108,9 +126,11 @@ const Modal = ({ tool, setModal }) => {
                             <label className="label">
                                 <span className="label-text">Phone Number</span>
                             </label>
-                            <input defaultValue={minimum} required onChange={handleQuantity} min={minimum} max={available} type="number" ref={quantityRef} placeholder="Quantity" className="input input-bordered input-error w-full " />
+                            <input defaultValue={tool?.minimum} required onChange={handleQuantity} min={tool?.minimum} max={tool?.available} type="number" ref={quantityRef} placeholder="Quantity" className="input input-bordered input-error w-full " />
                         </div>
-                        {condition && <p className='text-red-500'>Your quantity should {minimum} to {available}</p>}
+
+                        {condition && <p className='text-red-500'>Your quantity should {tool?.minimum} to {tool?.available}</p>}
+
                         <input disabled={condition} className='btn w-full btn-primary mt-5 text-white' type="submit" value='Sign Up' />
                     </form>
                 </div>
