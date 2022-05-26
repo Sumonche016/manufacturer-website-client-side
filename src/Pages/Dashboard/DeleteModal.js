@@ -1,8 +1,10 @@
 import React from 'react';
 
 const DeleteModal = ({ setConfirm }) => {
+
+
     const handleConfirm = () => {
-        console.log('hii')
+        // console.log('hii')
         setConfirm(true)
     }
 

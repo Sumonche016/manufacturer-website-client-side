@@ -1,0 +1,32 @@
+.review-input {
+  border: 1px solid #dedede;
+  background-color: #fff;
+
+  color: #666;
+  padding: 13px 20px !important;
+  height: 48px;
+  border-radius: 0;
+  line-height: 47px;
+  font-size: 13px !important;
+
+  width: 100%;
+  outline: none;
+}
+
+.review-textarea {
+  border: 1px solid #dedede;
+  background-color: #fff;
+
+  color: #666;
+  padding: 13px 20px !important;
+  border-radius: 0;
+  line-height: 47px;
+  font-size: 13px !important;
+
+  width: 100%;
+  outline: none;
+}
+
+.btn-send {
+  border-radius: 0;
+}

@@ -7,9 +7,9 @@ import { useNavigate } from 'react-router-dom';
 
 const MyOrders = () => {
     const [Loading, setLoading] = useState([])
-    // const [confirm, setConfirm] = useState(false)
+    const [confirm, setConfirm] = useState(false)
 
-    // console.log(confirm)
+    console.log(confirm)
     const [orders, setOrders] = useState([])
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
@@ -25,7 +25,7 @@ const MyOrders = () => {
     }, [Loading])
 
     const handleDelete = (id) => {
-        const confirm = window.confirm('sure to dekete')
+        // const confirm = window.confirm('sure to dekete')
         if (confirm) {
             const url = `http://localhost:5000/myorder/${id}`
 
@@ -49,10 +49,8 @@ const MyOrders = () => {
 
     return (
         <div>
-
             <div className="overflow-x-auto">
                 <table className="table w-full">
-
                     <thead>
                         <tr>
                             <th></th>
@@ -62,26 +60,24 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-
-
                         {
                             orders.map((order, index) => <tr key={index}>
                                 <th>{index + 1}</th>
-                                <td>{order?.userName}</td>
-                                <td>{order?.productName}</td>
+                                <td>
+                                    {order?.userName}
+                                </td>
+                                <td>{order?.productName}
+                                    <button onClick={handleNavigate} className=' ml-2 btn btn-primary text-white btn-xs'>Payment</button>
+                                </td>
 
 
                                 <td>
-
-                                    <button onClick={handleNavigate} className=' ml-2 btn btn-primary text-white btn-xs'>Payment</button>
-
-
                                     {order?.orderQuantity}
 
-                                    {/* <label onClick={() => handleDelete(order._id)} for="delete-modal" class=" ml-2 btn btn-primary text-white btn-xs">Delete</label> */}
+                                    <label onClick={() => handleDelete(order._id)} for="delete-modal" class=" ml-2 btn btn-primary text-white btn-xs">Delete</label>
 
 
-                                    <button onClick={() => handleDelete(order._id)} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button>
+                                    {/* <button onClick={() => handleDelete(order._id)} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button> */}
                                 </td>
 
                             </tr>)
@@ -92,7 +88,7 @@ const MyOrders = () => {
                 </table>
 
 
-
+                <DeleteModal setConfirm={setConfirm}></DeleteModal>
             </div>
         </div>
     );

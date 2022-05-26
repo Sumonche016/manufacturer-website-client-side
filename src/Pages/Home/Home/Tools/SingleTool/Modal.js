@@ -10,7 +10,8 @@ const Modal = ({ tool, setModal }) => {
     const [quantity, setQuantity] = useState([])
 
 
-    const { _id } = tool
+    const { _id, minimum, available } = tool
+
     // console.log()
     // console.log(name)
     // console.log(tool)
