@@ -23,18 +23,12 @@ const MyOrders = () => {
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
                     signOut(auth);
-
                     localStorage.removeItem('accessToken')
                     navigate('/')
                 }
-
-                res.json()
+                return res.json()
             })
-            .then(data => {
-                if (data) {
-                    setOrders(data)
-                }
-            })
+            .then(data => setOrders(data))
     }, [Loading])
 
     const handleDelete = (id) => {

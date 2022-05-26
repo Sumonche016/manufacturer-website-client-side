@@ -15,6 +15,10 @@ import Header from './Pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Payment from './Pages/Payment/Payment';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageProdut from './Pages/Dashboard/ManageProdut';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 
 const App = () => {
   return (
@@ -41,6 +45,10 @@ const App = () => {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='manageorder' element={<ManageOrder></ManageOrder>}></Route>
+          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageproduct' element={<ManageProdut></ManageProdut>}></Route>
+          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
         </Route>
 
 
