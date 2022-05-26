@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import google from '../../../image/google.png'
+import useToken from '../../../Hooks/useToken'
 
 
 const Register = () => {
@@ -20,14 +21,17 @@ const Register = () => {
     const navigate = useNavigate()
     //   hook form 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
+    const [token] = useToken(user || guser)
+    console.log(token)
+
+
     const onSubmit = async (data) => {
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name })
 
     };
 
-    if (user || guser) {
+    if (token) {
         navigate('/')
     }
 

@@ -69,6 +69,7 @@ const Modal = ({ tool, setModal }) => {
 
     const parseMinimum = parseInt(tool?.minimum)
     const parseAvail = parseInt(tool?.available)
+
     const condition = quantity > parseAvail || quantity < parseMinimum;
 
 
@@ -127,12 +128,12 @@ const Modal = ({ tool, setModal }) => {
                             <label className="label">
                                 <span className="label-text">Phone Number</span>
                             </label>
-                            <input defaultValue={tool?.minimum} required onChange={handleQuantity} min={tool?.minimum} max={tool?.available} type="number" ref={quantityRef} placeholder="Quantity" className="input input-bordered input-error w-full " />
+                            <input required onChange={handleQuantity} min={tool?.minimum} max={tool?.available} type="number" ref={quantityRef} placeholder="Quantity" className="input input-bordered input-error w-full " />
                         </div>
 
                         {condition && <p className='text-red-500'>Your quantity should {tool?.minimum} to {tool?.available}</p>}
 
-                        <input disabled={condition} className='btn w-full btn-primary mt-5 text-white' type="submit" value='Sign Up' />
+                        <input disabled={condition} className='btn w-full btn-primary mt-5 text-white' type="submit" value='Submit' />
                     </form>
                 </div>
             </div>

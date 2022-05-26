@@ -7,10 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 const MyOrders = () => {
     const [Loading, setLoading] = useState([])
+    const [orders, setOrders] = useState([])
     const [confirm, setConfirm] = useState(false)
 
-    console.log(confirm)
-    const [orders, setOrders] = useState([])
+
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
     useEffect(() => {
@@ -18,7 +18,6 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    console.log(data)
                     setOrders(data)
                 }
             })
@@ -34,7 +33,6 @@ const MyOrders = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-
                     toast('Deleted')
                     setLoading(!Loading)
 
@@ -61,7 +59,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr key={index}>
+                            orders?.map((order, index) => <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>
                                     {order?.userName}
@@ -75,7 +73,6 @@ const MyOrders = () => {
                                     {order?.orderQuantity}
 
                                     <label onClick={() => handleDelete(order._id)} for="delete-modal" class=" ml-2 btn btn-primary text-white btn-xs">Delete</label>
-
 
                                     {/* <button onClick={() => handleDelete(order._id)} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button> */}
                                 </td>

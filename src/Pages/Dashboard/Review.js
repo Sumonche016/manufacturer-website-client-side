@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import './Review.css'
 
@@ -22,7 +23,20 @@ const Review = () => {
             description: description
         }
 
-        console.log(review)
+        fetch('http://localhost:5000/review', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged == true) {
+
+                    toast('Sucessfully Send Your Review')
+                }
+            })
 
     }
 

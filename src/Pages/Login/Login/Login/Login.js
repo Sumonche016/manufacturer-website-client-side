@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import google from '../../../../image/google.png'
+import useToken from '../../../../Hooks/useToken'
 
 import auth from '../../../../firebase.init';
 import Loading from '../../../Shared/Loading/Loading';
@@ -16,6 +17,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+    const [token] = useToken(user || guser)
 
     const navigate = useNavigate()
     //   hook form 
@@ -30,7 +32,7 @@ const Login = () => {
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
-    if (user || guser) {
+    if (token) {
         navigate(from, { replace: true });
     }
 
