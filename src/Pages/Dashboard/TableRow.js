@@ -11,10 +11,19 @@ const TableRow = ({ user, index, refetch }) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+
+                if (res.status === 403) {
+                    toast.error('failed to make an admin')
+                }
+
+                return res.json()
+            })
             .then(data => {
-                toast.success('successfully make an admin')
-                refetch()
+                if (data.modifiedCount > 0) {
+                    toast.success('successfully make an admin')
+                    refetch()
+                }
             })
     }
 
