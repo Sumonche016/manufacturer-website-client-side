@@ -19,6 +19,7 @@ import ManageOrder from './Pages/Dashboard/ManageOrder';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProdut from './Pages/Dashboard/ManageProdut';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import RequireAdmin from './Pages/Login/Login/RequireAdmin';
 
 const App = () => {
   return (
@@ -48,7 +49,9 @@ const App = () => {
           <Route path='manageorder' element={<ManageOrder></ManageOrder>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='manageproduct' element={<ManageProdut></ManageProdut>}></Route>
-          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='makeadmin' element={<RequireAdmin>
+            <MakeAdmin></MakeAdmin>
+          </RequireAdmin>}></Route>
         </Route>
 
 
