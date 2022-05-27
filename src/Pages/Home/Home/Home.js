@@ -1,5 +1,5 @@
 import React from 'react';
-// import Allreview from '../Allreview/Allreview';
+import Allreview from '../Allreview/Allreview';
 import Banner from './Banner/Banner';
 import Tools from './Tools/Tools';
 
@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Tools></Tools>
-            {/* <Allreview></Allreview> */}
+            <Allreview></Allreview>
         </div>
     );
 };

@@ -35,6 +35,8 @@ const Review = () => {
                 if (data.acknowledged == true) {
 
                     toast('Sucessfully Send Your Review')
+                    ratingRef.current.value = ''
+                    desRef.current.value = ''
                 }
             })
 

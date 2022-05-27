@@ -45,7 +45,9 @@ const App = () => {
 
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
+
           <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+
           <Route path='manageorder' element={<ManageOrder></ManageOrder>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='manageproduct' element={<ManageProdut></ManageProdut>}></Route>

@@ -1,0 +1,6 @@
+.shadow {
+  box-shadow: 0 5px 20px rgb(0 0 0 / 6%) !important;
+}
+.profile-card {
+  padding: 4rem 2rem;
+}

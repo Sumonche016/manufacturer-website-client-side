@@ -1,13 +1,7 @@
-.banner {
+.hero {
   background-image: url("../../../../image/banner-main1.jpg");
   height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.25);
-  height: 100%;
-  width: 100%;
 }
