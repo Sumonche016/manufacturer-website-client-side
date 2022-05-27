@@ -72,8 +72,8 @@ const MyProfile = () => {
     }
 
     return (
-        <div className='flex justify-around items-center h-screen bg-[#F5F5F5]'>
-            <div className='shadow rounded-sm w-[30%] profile-card bg-white' >
+        <div className='block md:flex justify-around items-center h-screen bg-[#F5F5F5]'>
+            <div className='shadow rounded-sm w-full md:w-[30%] profile-card bg-white' >
                 <div className='flex justify-center'>
                     <div>
                         <div className='mb-7'>
@@ -83,31 +83,31 @@ const MyProfile = () => {
                     </div>
                 </div>
                 <ul>
-                    <li className='mb-2'><i class="fa-solid fa-envelope mr-2"></i> Email: {user.email}</li>
-                    <li className='mb-2'><i class=" mr-2 fa-solid fa-user-graduate"></i> Education: {profile?.education}</li>
-                    <li className='mb-2'><i class=" mr-2 fa-brands fa-linkedin"></i>LinkedIn: {profile.linkedin}</li>
-                    <li className='mb-2'><i class=" mr-2 fa-solid fa-location-dot"></i> Location: {profile.location}</li>
-                    <li className='mb-2'><i class=" mr-2 fa-solid fa-phone-flip"></i>Phone Number: {profile.phoneNumber}</li>
+                    <li className='mb-2'><i className="fa-solid fa-envelope mr-2"></i> Email: {user.email}</li>
+                    <li className='mb-2'><i className=" mr-2 fa-solid fa-user-graduate"></i> Education: {profile?.education}</li>
+                    <li className='mb-2'><i className=" mr-2 fa-brands fa-linkedin"></i>LinkedIn: {profile.linkedin}</li>
+                    <li className='mb-2'><i className=" mr-2 fa-solid fa-location-dot"></i> Location: {profile.location}</li>
+                    <li className='mb-2'><i className=" mr-2 fa-solid fa-phone-flip"></i>Phone Number: {profile.phoneNumber}</li>
                 </ul>
             </div>
 
 
-            <div class="card w-[40%]   bg-base-100 shadow-xl">
-                <div class="card-body  text-left">
+            <div className="card w-full md:w-[40%]   bg-base-100 shadow-xl">
+                <div className="card-body  text-left">
 
-                    <h2 class="card-title text-[40px] font-sans traking-wide text-[#1a191d] text-left">Update Your <span className='text-primary'>Profile</span></h2>
-                    <p className='text-[17px] text-[#666666] my-3'>Proin lacinia lacus ligula, id luctus sapien ornare ut. eget vehicula felis iaculis.</p>
+                    <h2 className="card-title text-[20px] md:text-[32px] font-sans traking-wide text-[#1a191d] text-left">Update Your <span className='text-primary'>Profile</span></h2>
+                    <p className='text-[17px] text-[#666666] my-3'>Fill the input field to update your information . Thank You stay with us</p>
 
                     <form action="" onSubmit={handleReview}>
-                        <input type="text" disabled value={user?.displayName} class="mb-4 review-input  w-full " />
-                        <input type="text" disabled value={user?.email} class="mb-4 review-input  w-full " />
-                        <input ref={educationRef} type="text" required placeholder='Education' class="review-input mb-4  w-full " />
-                        <input ref={locationRef} type="text" required placeholder='Your Location' class="review-input mb-4  w-full " />
-                        <input ref={linkedInRef} type="text" required placeholder='LinkedIn' class="review-input mb-4  w-full " />
-                        <input ref={phoneRef} type="number" required placeholder='Phone Number' class="review-input mb-4  w-full " />
+                        <input type="text" disabled value={user?.displayName} className="mb-4 review-input  w-full " />
+                        <input type="text" disabled value={user?.email} className="mb-4 review-input  w-full " />
+                        <input ref={educationRef} type="text" required placeholder='Education' className="review-input mb-4  w-full " />
+                        <input ref={locationRef} type="text" required placeholder='Your Location' className="review-input mb-4  w-full " />
+                        <input ref={linkedInRef} type="text" required placeholder='LinkedIn' className="review-input mb-4  w-full " />
+                        <input ref={phoneRef} type="number" required placeholder='Phone Number' className="review-input mb-4  w-full " />
 
-                        <div class="card-actions">
-                            <button type='submit' class="btn btn-primary text-left w-full text-white btn-send mt-5">Update</button>
+                        <div className="card-actions">
+                            <button type='submit' className="btn btn-primary text-left w-full text-white btn-send mt-5">Update</button>
                         </div>
                     </form>
 

@@ -56,7 +56,7 @@ const MyOrders = () => {
     return (
         <div>
             <div className="overflow-x-auto">
-                <table className="table w-full">
+                <table className="table w-[90%] md:w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -80,7 +80,7 @@ const MyOrders = () => {
                                 <td>
                                     {order?.orderQuantity}
 
-                                    <label onClick={() => handleDelete(order._id)} for="delete-modal" class=" ml-2 btn btn-primary text-white btn-xs">Delete</label>
+                                    <label onClick={() => handleDelete(order._id)} for="delete-modal" className=" ml-2 btn btn-primary text-white btn-xs">Delete</label>
 
                                     {/* <button onClick={() => handleDelete(order._id)} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button> */}
                                 </td>

@@ -9,7 +9,7 @@ const Allreview = () => {
     console.log(data)
     return (
         <div className='py-20'>
-            <h2 class=" mb-10 text-center text-[40px] font-sans font-semibold traking-wide text-[#1a191d] "> Our Customer <span className='text-primary'>Review</span></h2>
+            <h2 className=" mb-10 text-center text-[40px] font-sans font-semibold traking-wide text-[#1a191d] "> Our Customer <span className='text-primary'>Review</span></h2>
             <div className='w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-5'>
 
 
