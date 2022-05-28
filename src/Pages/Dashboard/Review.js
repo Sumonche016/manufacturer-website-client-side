@@ -44,12 +44,11 @@ const Review = () => {
 
 
     return (
-        <div className='flex justify-center items-center h-screen'>
-            <div className="card w-[50%]   bg-base-100 shadow-xl">
-                <div className="card-body  text-left">
-
-                    <h2 className="card-title text-[40px] font-sans traking-wide text-[#1a191d] text-left">Add Your <span className='text-primary'>Review</span></h2>
-                    <p className='text-[17px] text-[#666666] my-3'>Proin lacinia lacus ligula, id luctus sapien ornare ut. Nunc efficitur tellus finibus nulla elementum, eget vehicula felis iaculis.</p>
+        <div className='flex justify-center items-center h-screen bg-[#F5F5F5] '>
+            <div className=" w-[50%] p-[40px]  bg-base-100 shadow-touch">
+                <div className=" text-center">
+                    <h2 className="card-title text-[35px] font-sans traking-wide text-[#1a191d] text-center block">Add Your <span className='text-primary'>Review</span></h2>
+                    <p className='text-[17px] text-[#666666] my-5'>Proin lacinia lacus ligula, id luctus sapien ornare ut. Nunc efficitur tellus finibus nulla elementum, eget vehicula felis iaculis.</p>
 
                     <form action="" onSubmit={handleReview}>
                         <input ref={userRef} type="text" disabled value={user?.displayName} className="mb-4 review-input  w-full " />

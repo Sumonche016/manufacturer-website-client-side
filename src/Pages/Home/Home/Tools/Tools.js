@@ -5,20 +5,23 @@ import Tool from './Tool/Tool';
 
 const Tools = () => {
     const { data, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/product').then(res => res.json()))
-    console.log(data)
     if (isLoading) {
         return <Loading></Loading>
     }
     return (
-        <div className='w-[90%] mx-auto pb-20'>
-            <h1 className='text-secondary text-3xl font-bold text-center py-5'>Our Tools</h1>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                {
-                    data.map((tool, index) => <Tool key={index} tool={tool}></Tool>)
-                }
-            </div>
+        <div >
+            <div className='w-[90%] mx-auto pb-20'>
+                <h2 className="card-title text-[40px] py-10 block font-sans traking-wide text-[#1a191d] text-center">Our  <span className='text-primary'>Product</span></h2>
 
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                    {
+                        data.map((tool, index) => <Tool key={index} tool={tool}></Tool>)
+                    }
+                </div>
+
+            </div>
         </div>
+
     );
 };
 
