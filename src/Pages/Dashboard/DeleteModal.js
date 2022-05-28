@@ -1,13 +1,9 @@
 import React from 'react';
 
-const DeleteModal = ({ setConfirm }) => {
+const DeleteModal = () => {
 
 
-    const handleConfirm = () => {
 
-        setConfirm(true)
-
-    }
 
     return (
         <div>
@@ -16,7 +12,7 @@ const DeleteModal = ({ setConfirm }) => {
                 <div className="modal-box">
                     <p className="py-4">Sure To Delete The product</p>
                     <div className="modal-action">
-                        <label onClick={handleConfirm} htmlFor="delete-modal" className="btn">Confirm</label>
+                        <label htmlFor="delete-modal" className="btn">Caceal</label>
                     </div>
                 </div>
             </div>

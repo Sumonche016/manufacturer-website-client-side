@@ -2,13 +2,14 @@ import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../../firebase.init';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-const Modal = ({ tool, setModal }) => {
+const Modal = ({ tool, setModal, refetch }) => {
 
     const [user] = useAuthState(auth)
 
     const [quantity, setQuantity] = useState([])
-
+    const navigate = useNavigate()
 
     const { _id, minimum, available } = tool
 
@@ -61,6 +62,7 @@ const Modal = ({ tool, setModal }) => {
 
                     toast('Your Order Placed Sucessfully')
                     setModal(null)
+                    navigate('/')
 
                 }
             })

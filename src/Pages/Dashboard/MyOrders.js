@@ -1,53 +1,61 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import DeleteModal from './DeleteModal';
+// import DeleteModal from './DeleteModal';
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import { useQuery } from 'react-query';
 
 const MyOrders = () => {
-    const [Loading, setLoading] = useState([])
-    const [orders, setOrders] = useState([])
-    const [confirm, setConfirm] = useState(false)
+
+    // const [orders, setOrders] = useState([])
+    // const [confirm, setConfirm] = useState(null)
 
     const [user] = useAuthState(auth)
+
     const navigate = useNavigate()
-    useEffect(() => {
-        fetch(`http://localhost:5000/myorder?email=${user?.email}`, {
-            method: 'GET',
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+
+
+    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/myorder?email=${user?.email}`, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
+        .then(res => {
+            if (res.status === 401 || res.status === 403) {
+                signOut(auth);
+                localStorage.removeItem('accessToken')
+                navigate('/')
             }
-        })
-            .then(res => {
-                if (res.status === 401 || res.status === 403) {
-                    signOut(auth);
-                    localStorage.removeItem('accessToken')
-                    navigate('/')
-                }
-                return res.json()
-            })
-            .then(data => setOrders(data))
-    }, [Loading])
+            return res.json()
+        }))
 
-    const handleDelete = (id) => {
-        // const confirm = window.confirm('sure to dekete')
+
+
+    const handleDelete = () => {
+
+        const url = `http://localhost:5000/myorder?email=${user?.email}`
+        const confirm = window.confirm('sure to delete')
+
         if (confirm) {
-            const url = `http://localhost:5000/myorder/${id}`
-
             fetch(url, {
-                method: "DELETE"
+                method: "DELETE",
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
                 .then(res => res.json())
-                .then(data => {
-                    toast('Deleted')
-                    setLoading(!Loading)
-
+                .then(deleteData => {
+                    toast('deleted')
+                    refetch()
                 })
         }
 
     }
+
+
     const handleNavigate = () => {
         navigate('/payment')
     }
@@ -80,9 +88,9 @@ const MyOrders = () => {
                                 <td>
                                     {order?.orderQuantity}
 
-                                    <label onClick={() => handleDelete(order._id)} for="delete-modal" className=" ml-2 btn btn-primary text-white btn-xs">Delete</label>
+                                    {/* <label for="delete-modal" className=" ml-2 btn btn-primary text-white btn-xs">Delete</label> */}
 
-                                    {/* <button onClick={() => handleDelete(order._id)} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button> */}
+                                    <button for="delete-modal" onClick={() => handleDelete()} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button>
                                 </td>
 
                             </tr>)
@@ -92,8 +100,8 @@ const MyOrders = () => {
                     </tbody>
                 </table>
 
-
-                <DeleteModal setConfirm={setConfirm}></DeleteModal>
+                {/* {confirm && <DeleteModal setConfirm={setConfirm}></DeleteModal>
+                } */}
             </div>
         </div>
     );

@@ -6,6 +6,7 @@ import Modal from './Modal';
 
 
 const SigngleTool = () => {
+
     const { id } = useParams()
     const [tool, setTool] = useState([])
     const [modal, setModal] = useState(true)
