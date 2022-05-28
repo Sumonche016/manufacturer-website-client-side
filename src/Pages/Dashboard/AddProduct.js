@@ -59,7 +59,7 @@ const AddProduct = () => {
 
     return (
         <div className='bg-[#F5F5F5] flex justify-center items-center h-screen'>
-            <div className='shadow w-[50%] bg-white card'>
+            <div className='shadow w-[100%]  md:w-[50%] bg-white card'>
 
                 <div className='card-body'>
                     <h2 className="card-title text-[30px] mb-4 font-sans traking-wide text-[#1a191d] text-left">Add <span className='text-primary'>Product</span></h2>

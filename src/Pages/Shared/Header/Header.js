@@ -44,7 +44,7 @@ const Header = () => {
                             {menu}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl">Your Tools</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
@@ -52,7 +52,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Dashboard</label>
+                    <label as={Link} to='/dashboard' htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden text-white">Dashboard</label>
 
                 </div>
             </div>

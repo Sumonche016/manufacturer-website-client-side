@@ -1,62 +1,52 @@
 [
   {
-    "supplier": "Toyota",
-    "quantity": 20,
-    "name": "BMW 8-serie 2-door coupe",
+    "name": "dril-dghe56",
     "img": "https://z9d7c4u6.rocketcdn.me/wp-content/uploads/2020/06/wood-tools-product-8-opt-430x500.jpg.webp",
     "price": 6200,
-    "minimum": "20",
-    "available": "200",
+    "minimum": "3",
+    "available": "56",
     "description": "How the adventure ended will be seen anon. Aouda was anxious, though she said nothing. As for Passepartout, he thought Mr. Fogg’s manoeuvre simply glorious. The captain had said “between eleven and twelve knots,” and the Henrietta confirmed his prediction."
   },
 
   {
-    "supplier": "Toyota",
-    "quantity": 20,
-    "minimum": "20",
-    "available": "200",
-    "name": "Chevrolet Camaro 2-door",
-    "img": "https://z9d7c4u6.rocketcdn.me/wp-content/uploads/2020/06/wood-tools-product-6-opt-430x500.jpg.webp",
+    "minimum": "50",
+    "available": "800",
+    "name": "ph 4373542",
+    "img": "https://fixit.com.bd/wp-content/uploads/2021/06/61zL8KiBofL._AC_SL1280_-1-350x350.jpg",
     "price": 100,
     "description": "Aouda was anxious, though it is she said nothing.this is the best car .so my request to buy this As for Passepartout, he thought Mr. Fogg’s manoeuvre simply glorious. The captain had said “between eleven and twelve knots,” and the Henrietta confirmed his prediction."
   },
   {
-    "supplier": "Bmv",
-    "minimum": "20",
-    "available": "200",
-    "quantity": 20,
-    "name": "Ferrari LaFerrari 2-door",
-    "img": "https://z9d7c4u6.rocketcdn.me/wp-content/uploads/2020/06/wood-tools-product-6-opt-430x500.jpg.webp",
+    "available": "44",
+    "quantity": 204,
+    "name": "drill chine 7453",
+    "img": "https://fixit.com.bd/wp-content/uploads/2021/06/demolition-hammer-drill.jpg",
     "price": 100,
     "description": "Aouda was anxious, though she said nothing. As for Passepartout, he thought Mr. Fogg’s manoeuvre simply glorious. The captain had said “between eleven and twelve knots,” and the Henrietta confirmed his prediction."
   },
   {
-    "supplier": "Toyota",
-    "minimum": "20",
-    "available": "200",
-    "quantity": 70,
-    "name": "Mercedes-Benz S-class 2",
-    "img": "https://z9d7c4u6.rocketcdn.me/wp-content/uploads/2020/06/wood-tools-product-6-opt-430x500.jpg.webp",
+    "minimum": "60",
+    "available": "2000",
+
+    "name": "New drll 953",
+    "img": "https://fixit.com.bd/wp-content/uploads/2021/06/41JBOkINJCL._AC_-1-350x350.jpg",
     "price": 100,
     "description": "As for Passepartout, he thought Mr. Fogg’s manoeuvre simply glorious. The captain had said “between eleven and twelve knots,” and the Henrietta confirmed his prediction."
   },
   {
-    "supplier": "Walton",
-    "quantity": 29,
-    "minimum": "20",
-    "available": "200",
-    "name": "Personalized Nutrition Plan",
-    "img": "https://demo.vehica.com/wp-content/uploads/2020/09/car-red.jpg",
+    "minimum": "54",
+    "available": "676",
+    "name": "sb94 rf drill",
+    "img": "https://rflbestbuy.com/images/detailed/22/0043326_impact-drill-machine-id850w.jpeg",
     "price": 100,
     "description": "Sometimes to change diet habits is sufficient for changing the whole lifestyle. Food for body can heal the whole personality by causing a behavioral change.It is very ceap"
   },
   {
-    "supplier": "Runner",
-    "minimum": "20",
-    "available": "200",
-    "quantity": 12,
-    "name": "Audi A8 4-door sedan silver",
-    "img": "https://demo.vehica.com/wp-content/uploads/2020/08/6.jpg",
+    "minimum": "14",
+    "available": "432",
+
+    "name": "Drill sb 2",
+    "img": "https://4.imimg.com/data4/IH/VK/MY-3228012/bosch-drill-machine-13-mm-500x500.jpg",
     "price": 100,
     "description": "If, then—for there were “ifs” still—the sea did not become too boisterous, if the wind did not veer round to the east, if no accident happened to the boat or its machinery, the Henrietta might cross the three…"
   }
