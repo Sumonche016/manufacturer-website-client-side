@@ -20,6 +20,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProdut from './Pages/Dashboard/ManageProdut';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import RequireAdmin from './Pages/Login/Login/RequireAdmin';
+import Blog from './Pages/Blog/Blog';
 
 const App = () => {
   return (
@@ -44,12 +45,8 @@ const App = () => {
         }>
 
           <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
-
           <Route index element={<MyProfile></MyProfile>}></Route>
-
           <Route path='review' element={<Review></Review>}></Route>
-
-
           <Route path='manageorder' element={<ManageOrder></ManageOrder>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='manageproduct' element={<ManageProdut></ManageProdut>}></Route>
@@ -60,6 +57,7 @@ const App = () => {
 
 
         <Route path='/payment' element={<Payment></Payment>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
