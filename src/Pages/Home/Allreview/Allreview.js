@@ -5,7 +5,7 @@ import './Allreview.css'
 import SingleReview from './SingleReview';
 const Allreview = () => {
 
-    const { data, isLoading } = useQuery('allreview', () => fetch('http://localhost:5000/review').then(res => res.json()))
+    const { data, isLoading } = useQuery('allreview', () => fetch('https://fast-forest-54973.herokuapp.com/review').then(res => res.json()))
     console.log(data)
     return (
         <div className='py-20'>

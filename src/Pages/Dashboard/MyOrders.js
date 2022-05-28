@@ -17,7 +17,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
 
-    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/myorder?email=${user?.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`https://fast-forest-54973.herokuapp.com/myorder?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const MyOrders = () => {
 
     const handleDelete = () => {
 
-        const url = `http://localhost:5000/myorder?email=${user?.email}`
+        const url = `https://fast-forest-54973.herokuapp.com/myorder?email=${user?.email}`
         const confirm = window.confirm('sure to delete')
 
         if (confirm) {

@@ -12,7 +12,7 @@ const SigngleTool = () => {
     const [modal, setModal] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://fast-forest-54973.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [])

@@ -49,7 +49,7 @@ const Modal = ({ tool, setModal, refetch }) => {
 
         }
 
-        fetch('http://localhost:5000/myorder', {
+        fetch('https://fast-forest-54973.herokuapp.com/myorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

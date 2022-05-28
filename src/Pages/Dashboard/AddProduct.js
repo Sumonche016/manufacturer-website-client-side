@@ -33,7 +33,7 @@ const AddProduct = () => {
                     console.log(product)
                     // send data 
 
-                    fetch('http://localhost:5000/addproduct', {
+                    fetch('https://fast-forest-54973.herokuapp.com/addproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
