@@ -24,11 +24,13 @@ const Header = () => {
             <>
                 <li><Link to='/signup'>Sign Up</Link></li>
                 <li><Link to='/login'>Log In</Link></li>
-                <li><Link to='/blog'>Blog</Link></li>
+
             </>
         }
         <li><Link to='/'>Home</Link></li>
-        <li><a>About</a></li>
+        <li><Link to='/blog'>Blog</Link></li>
+        <li><Link to='/portfolio'>MyPortfolio</Link></li>
+
 
         {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
     </>

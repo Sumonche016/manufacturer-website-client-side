@@ -11,44 +11,44 @@ const SingleReview = ({ review }) => {
             </div>
             <div className="star mt-3">
                 {rating == 1 ?
-                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star text-primary"></i>
                     : ''}
             </div>
             <div className="star mt-3">
                 {rating == 2 ?
                     <>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
                     </>
                     : ''}
             </div>
             <div className="star mt-3">
                 {rating == 3 ?
                     <>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
                     </>
                     : ''}
             </div>
             <div className="star mt-3">
                 {rating == 4 ?
                     <>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
                     </>
                     : ''}
             </div>
             <div className="star mt-3">
                 {rating == 5 ?
                     <>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
+                        <i className="fas fa-star text-primary"></i>
                     </>
                     : ''}
             </div>

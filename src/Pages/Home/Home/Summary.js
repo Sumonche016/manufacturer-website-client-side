@@ -6,7 +6,7 @@ const Summary = () => {
         <div className='bg-[#F5F5F5]'>
 
 
-            <div className='w-[90%] mx-auto py-5'>
+            <div className='w-[90%] mx-auto py-10'>
                 <div className='flex justify-center items-center pb-10'>
                     <div className='text-center py-3'>
                         <h2 className=" block card-title  text-[20px] md:text-[32px] font-sans traking-wide text-[#1a191d] text-center">Millions Bussiness <span className='text-primary'>Trus Us</span></h2>

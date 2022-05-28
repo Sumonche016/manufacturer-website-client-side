@@ -21,6 +21,7 @@ import ManageProdut from './Pages/Dashboard/ManageProdut';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import RequireAdmin from './Pages/Login/Login/RequireAdmin';
 import Blog from './Pages/Blog/Blog';
+import Portfolio from './Pages/Portfolio/Portfolio';
 
 const App = () => {
   return (
@@ -58,6 +59,7 @@ const App = () => {
 
         <Route path='/payment' element={<Payment></Payment>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
