@@ -14,7 +14,6 @@ import Footer from './Pages/Shared/footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Payment from './Pages/Payment/Payment';
 import ManageOrder from './Pages/Dashboard/ManageOrder';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProdut from './Pages/Dashboard/ManageProdut';
@@ -22,6 +21,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import RequireAdmin from './Pages/Login/Login/RequireAdmin';
 import Blog from './Pages/Blog/Blog';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 const App = () => {
   return (
@@ -45,8 +45,12 @@ const App = () => {
           </RequireAuth>
         }>
 
-          <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
+
           <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path='myorder' element={<MyOrders></MyOrders>}></Route>
+
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+
           <Route path='review' element={<Review></Review>}></Route>
           <Route path='manageorder' element={<ManageOrder></ManageOrder>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
@@ -57,7 +61,6 @@ const App = () => {
         </Route>
 
 
-        <Route path='/payment' element={<Payment></Payment>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>

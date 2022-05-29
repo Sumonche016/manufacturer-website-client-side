@@ -12,14 +12,14 @@ const SigngleTool = () => {
     const [modal, setModal] = useState(true)
 
     useEffect(() => {
-        fetch(`https://fast-forest-54973.herokuapp.com/product/${id}`)
+        fetch(`http://localhost:5000/product/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [])
 
 
     if (tool) {
-        var { img, minimum, price, description, available } = tool;
+        var { img, minimum, price, description, available, name } = tool;
     }
 
 
@@ -29,7 +29,7 @@ const SigngleTool = () => {
             <div className="card w-96 bg-base-100 shadow-xl text-center">
                 <figure><img src={img} className='w-[350px] h-[350px]' alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title text-center block">Shoes!</h2>
+                    <h2 className="card-title text-center block">{name}</h2>
                     <p>{description?.slice(0, 70)}</p>
                     <p>Minimum Order : {minimum}pics</p>
                     <p>Available : {available}pics</p>

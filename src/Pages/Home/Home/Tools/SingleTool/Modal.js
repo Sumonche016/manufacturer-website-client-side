@@ -26,6 +26,7 @@ const Modal = ({ tool, setModal, refetch }) => {
     const addressRef = useRef()
     const quantityRef = useRef()
     const productnameRef = useRef()
+    const productpriceRef = useRef()
 
 
     const handleOrder = event => {
@@ -36,6 +37,7 @@ const Modal = ({ tool, setModal, refetch }) => {
         const number = numberRef.current.value;
         const quantity = quantityRef.current.value;
         const address = quantityRef.current.value;
+        const productPrice = productpriceRef.current.value;
 
         const myOrder = {
             orderId: _id,
@@ -44,12 +46,13 @@ const Modal = ({ tool, setModal, refetch }) => {
             orderQuantity: quantity,
             userName: name,
             productName: productname,
-            address: address
+            address: address,
+            price: productPrice
 
 
         }
 
-        fetch('https://fast-forest-54973.herokuapp.com/myorder', {
+        fetch('http://localhost:5000/myorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -105,6 +108,14 @@ const Modal = ({ tool, setModal, refetch }) => {
                             <input type="text" ref={productnameRef} disabled value={tool?.name} className="input input-bordered input-error w-full " />
                         </div>
 
+
+                        <div className="form-control w-full ">
+                            <label className="label">
+                                <span className="label-text">price</span>
+                            </label>
+                            <input type="text" ref={productpriceRef} disabled value={tool?.price} className="input input-bordered input-error w-full " />
+                        </div>
+
                         <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Your Email</span>
@@ -126,9 +137,11 @@ const Modal = ({ tool, setModal, refetch }) => {
                             <input required type="text" ref={addressRef} placeholder="Adress" className="input input-bordered input-error w-full " />
                         </div>
 
+
+
                         <div className="form-control w-full ">
                             <label className="label">
-                                <span className="label-text">Phone Number</span>
+                                <span className="label-text">Quantity</span>
                             </label>
                             <input required onChange={handleQuantity} min={tool?.minimum} max={tool?.available} type="number" ref={quantityRef} placeholder="Quantity" className="input input-bordered input-error w-full " />
                         </div>

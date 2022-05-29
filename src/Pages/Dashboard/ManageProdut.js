@@ -3,14 +3,14 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
 const ManageProdut = () => {
-    const { data: product, refetch } = useQuery('alldata', () => fetch('https://fast-forest-54973.herokuapp.com/product').then(res => res.json()))
+    const { data: product, refetch } = useQuery('alldata', () => fetch('http://localhost:5000/product').then(res => res.json()))
     console.log(product)
 
 
     const handleDelte = (id) => {
         const confirm = window.confirm;
         if (confirm) {
-            fetch(`https://fast-forest-54973.herokuapp.com/product/${id}`, {
+            fetch(`http://localhost:5000/product/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

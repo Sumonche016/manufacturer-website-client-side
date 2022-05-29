@@ -3,21 +3,18 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 // import DeleteModal from './DeleteModal';
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { useQuery } from 'react-query';
 
 const MyOrders = () => {
-
-    // const [orders, setOrders] = useState([])
-    // const [confirm, setConfirm] = useState(null)
 
     const [user] = useAuthState(auth)
 
     const navigate = useNavigate()
 
 
-    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`https://fast-forest-54973.herokuapp.com/myorder?email=${user?.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('order', () => fetch(`http://localhost:5000/myorder?email=${user?.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +33,7 @@ const MyOrders = () => {
 
     const handleDelete = () => {
 
-        const url = `https://fast-forest-54973.herokuapp.com/myorder?email=${user?.email}`
+        const url = `http://localhost:5000/myorder?email=${user?.email}`
         const confirm = window.confirm('sure to delete')
 
         if (confirm) {
@@ -56,9 +53,6 @@ const MyOrders = () => {
     }
 
 
-    const handleNavigate = () => {
-        navigate('/payment')
-    }
 
 
     return (
@@ -80,16 +74,21 @@ const MyOrders = () => {
                                 <td>
                                     {order?.userName}
                                 </td>
-                                <td>{order?.productName}
-                                    <button onClick={handleNavigate} className=' ml-2 btn btn-primary text-white btn-xs'>Payment</button>
-                                </td>
+                                <td>
+                                    {order?.transactionId &&
+                                        <button className='disabled ml-2 btn btn-primary text-white btn-xs'>{order.transactionId}</button>
+                                    }
+                                    {order?.productName}
+                                    {!order.paid &&
+                                        <Link to={`/dashboard/payment/${order._id}`}>
+                                            <button className=' ml-2 btn btn-primary text-white btn-xs'>Pay</button>
+                                        </Link>
 
+                                    }
+                                </td>
 
                                 <td>
                                     {order?.orderQuantity}
-
-                                    {/* <label for="delete-modal" className=" ml-2 btn btn-primary text-white btn-xs">Delete</label> */}
-
                                     <button for="delete-modal" onClick={() => handleDelete()} className=' ml-2 btn btn-primary text-white btn-xs'>Delete</button>
                                 </td>
 
