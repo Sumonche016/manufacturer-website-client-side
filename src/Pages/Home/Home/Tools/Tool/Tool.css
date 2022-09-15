@@ -2,3 +2,69 @@
   border: 1px solid #dedede;
   border-radius: 0 !important;
 }
+
+.border-bottom {
+  border-bottom: 1px solid #dedede;
+}
+
+.top-sell {
+  text-align: center;
+  line-height: 100%;
+  color: #ff2d37;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.best-sell::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #ff2d37;
+  top: 50%;
+  margin-top: -4px;
+  left: 0;
+  border-radius: 100%;
+}
+
+.best-sell::after {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #ff2d37;
+  top: 50%;
+  margin-top: -4px;
+  right: 0;
+  border-radius: 100%;
+}
+
+.best-sell {
+  font-size: 36px;
+  color: #282828;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  padding: 0 15px;
+  display: inline-block;
+}
+
+.heading-tools {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400 !important;
+}
+
+.tools-border-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.buy-now {
+  transform: translateY(-40px);
+  /* visibility: hidden;
+  opacity: 0; */
+
+  transition: all 0.5s;
+}

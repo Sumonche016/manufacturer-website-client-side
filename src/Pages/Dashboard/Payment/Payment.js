@@ -8,14 +8,13 @@ import CheckOutForm from './CheckOutForm';
 
 
 
-
 const stripePromise = loadStripe('pk_test_51L4kzeDd6detVU1eVEAsTYYuIjEkM1Cf590OWIWowIk1qbBy7mJGcRYtrCDxJtIFkGQ7RLpZTgAWpOAq7WbA4Bq200EdEZW5up');
 
 
 const Payment = () => {
     const { id } = useParams()
 
-    const { data, isLoading } = useQuery(['users', id], () => fetch(`http://localhost:5000/payment/${id}`, {
+    const { data, isLoading } = useQuery(['users', id], () => fetch(`https://fast-forest-54973.herokuapp.com/payment/${id}`, {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,7 +28,8 @@ const Payment = () => {
 
 
     return (
-        <div className='flex justify-around items-center h-screen'>
+        <div className='block md:flex justify-around items-center h-screen'>
+
             <div className="card w-96 bg-base-100 shadow-xl text-center">
                 <div className="card-body">
                     <h2 className="card-title text-center block">Product Name :{data?.productName}</h2>
@@ -38,15 +38,15 @@ const Payment = () => {
 
                 </div>
 
-
             </div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-96 bg-base-100 shadow-xl mt-5 md:mt-0">
                 <div class="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckOutForm data={data} />
                     </Elements>
                 </div>
             </div>
+
         </div>
     );
 };

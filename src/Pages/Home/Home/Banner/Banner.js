@@ -1,16 +1,14 @@
 import React from 'react';
 import './Banner.css'
+import bannerImg from '../../../../image/item-3-1920x720.jpg'
 const Banner = () => {
     return (
-        <div className="hero min-h-screen banner">
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div className="w-full">
-                    <h1 className="mb-5 text-5xl font-bold text-white">A Company Rule The word Company</h1>
-                    <p className="mb-5 text-white">Lets Know and enjoy the world best </p>
-                </div>
+        <div>
+            <div>
+                <img src={bannerImg} alt="" />
             </div>
         </div>
+
     );
 };
 

@@ -3,7 +3,7 @@ import portfolio from '../../image/port.jpg'
 import profileImg from '../../image/myprofile.png'
 const Portfolio = () => {
     return (
-        <div className='py-10 bg-[#F5F5F5]'>
+        <div className='py-15 bg-[#F5F5F5]'>
             <div className='grid grid-cols-1 md:grid-cols-2'>
                 <div className='flex justify-center items-center'>
                     <img className='w-[496px]' src={portfolio} alt="" />

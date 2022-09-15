@@ -12,9 +12,10 @@ const CheckOutForm = ({ data }) => {
 
     const { price, _id } = data
 
+    console.log(data.price)
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://fast-forest-54973.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +81,7 @@ const CheckOutForm = ({ data }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/payment/${_id}`, {
+            fetch(`https://fast-forest-54973.herokuapp.com/payment/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

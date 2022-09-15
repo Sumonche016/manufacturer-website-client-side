@@ -14,7 +14,7 @@ const MyProfile = () => {
     const [profile, setProfile] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/profile/${user?.email}`, {
+        fetch(`https://fast-forest-54973.herokuapp.com/profile/${user?.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -50,7 +50,7 @@ const MyProfile = () => {
             linkedin: linkedin,
             location: location
         }
-        fetch(`http://localhost:5000/myprofile/${user.email}`, {
+        fetch(`https://fast-forest-54973.herokuapp.com/myprofile/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -1,0 +1,19 @@
+.header-shadow {
+  box-shadow: 0 8px 65px -33px rgb(0 0 0 / 50%);
+}
+
+.font {
+  font-weight: 600;
+}
+
+.navOpen {
+  display: inline-block;
+}
+.navClose {
+  display: none;
+}
+
+.navbar {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}

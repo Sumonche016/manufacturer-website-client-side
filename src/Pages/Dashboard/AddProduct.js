@@ -7,7 +7,6 @@ const AddProduct = () => {
 
     const imagebbKey = '4f903613e3812eb596d6cfe75fe8cfc8';
 
-
     const onSubmit = async data => {
         const image = data.image[0]
         const formData = new FormData();
@@ -25,7 +24,7 @@ const AddProduct = () => {
                     const product = {
                         name: data.name,
                         description: data.description,
-                        price: data.price,
+                        price: data.Price,
                         minimum: data.minimum,
                         img: img,
                         available: data.available
@@ -33,7 +32,7 @@ const AddProduct = () => {
                     console.log(product)
                     // send data 
 
-                    fetch('http://localhost:5000/addproduct', {
+                    fetch('https://fast-forest-54973.herokuapp.com/addproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

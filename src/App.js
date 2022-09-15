@@ -22,13 +22,22 @@ import RequireAdmin from './Pages/Login/Login/RequireAdmin';
 import Blog from './Pages/Blog/Blog';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Payment from './Pages/Dashboard/Payment/Payment';
+import Tools from './Pages/Home/Home/Tools/Tools';
+import NewArriaval from './Pages/Home/Home/NewArriaval/NewArriaval';
+import SmartDevices from './Pages/Home/Home/SmartDevices/SmartDevices';
 
 const App = () => {
   return (
-    <div>
+    <div className='app'>
       <Header></Header>
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home></Home>}>
+
+          <Route index element={<Tools></Tools>}></Route>
+          <Route path='tools/newarriaval' element={<NewArriaval></NewArriaval>}></Route>
+          <Route path='tools/smartdevices' element={<SmartDevices></SmartDevices>}></Route>
+        </Route>
+
         <Route path='/signup' element={<Register></Register>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
 

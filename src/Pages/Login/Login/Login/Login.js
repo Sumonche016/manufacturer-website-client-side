@@ -40,7 +40,7 @@ const Login = () => {
         return <Loading></Loading>
     }
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex justify-center items-center h-screen pt-12'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title py-3">Log In</h2>
