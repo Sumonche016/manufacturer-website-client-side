@@ -24,7 +24,7 @@
   left: 0;
   background-color: #333;
   bottom: 0px;
-  width: 280px;
+  width: 260px;
   padding: 10px;
   z-index: 999999;
   overflow: hidden;
@@ -49,4 +49,8 @@
 .border-top-mobile {
   border-top: 1px solid #6a6d71;
   padding-top: 5px;
+}
+
+.blog .card {
+  z-index: -1 !important;
 }

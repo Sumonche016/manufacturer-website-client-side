@@ -6,7 +6,7 @@ const Blog = () => {
     return (
         <div className='w-[90%] mx-auto'>
             <h2 className="card-title text-[20px] md:text-[32px] py-7 block text-center font-sans traking-wide text-[#1a191d] ">WellCome To  <span className='text-primary'>Blog</span></h2>
-            <div className='grid grid-cols-1 gap-5 md:grid-cols-3 py-5'>
+            <div className='grid grid-cols-1 gap-5 md:grid-cols-3 py-5 blog'>
                 <div class="card  bg-base-100 shadow-xl">
                     <figure><img src={react} alt="Shoes" /></figure>
                     <div class="card-body">
