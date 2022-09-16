@@ -9,10 +9,11 @@ import logo from '../../../image/logo.png'
 // import logo from '../../../image/y-removebg-preview.png'
 import hamburger from '../../../image/menu.png'
 import { useState } from 'react';
+import { FaTimes } from 'react-icons/fa'
 
 const Header = () => {
 
-    const [navSwitch, setNavswitch] = useState(false)
+    const [isopen, setIsopen] = useState(false)
 
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
@@ -43,21 +44,35 @@ const Header = () => {
         <li><Link to='/portfolio'>MyPortfolio</Link></li>
 
 
-        {/* {user && } */}
     </>
     return (
         <div className=''>
-            <div className='w-[85%] mx-auto'>
+            <div className='w-full md:w-[85%] mx-auto'>
                 <div className="navbar bg-white text-white  font-medium flex sticky top-0 left-0 justify-between">
-                    <div className="navbar-start flex md:flex-row-reverse w-full justify-between ">
-                        <div className="dropdown">
-                            <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                                <img src={hamburger} className='w-[60px]' alt="" />
-                            </label>
-                            <ul tabIndex="0" className="font-medium text-[#282828] text-[14px] z-5000000 menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52">
-                                {menu}
-                            </ul>
-                        </div>
+                    <div className="navbar-start flex  w-full justify-start md:justify-between ">
+
+                        <img onClick={() => setIsopen(!isopen)} src={hamburger} className='w-[40px] cursor-pointer lg:hidden' alt="" />
+                        <ul className={`absolute ${isopen ? 'open' : 'close'}  sidebar top-[5rem] md:hidden bg-[#333]`}>
+                            <FaTimes onClick={() => setIsopen(false)} className='cursor-pointer absolute top-[1rem] right-[.8rem]' />
+                            <div className='mobile-menu p-[20px] text-[14px] uppercase font-medium font-rubik '>
+                                {user ? <>
+                                    <button className='btn btn-ghost font-medium btn-user' onClick={logout}>Sign Out {user?.displayName}</button>
+                                    <li className='mb-[10px] border-top-mobile'><Link to='/dashboard'>Dashboard</Link></li>
+
+                                </> :
+                                    <>
+                                        <li className='mb-[10px] border-top-mobile'><Link to='/signup'>Sign Up</Link></li> className='mb-[10px] border-top-mobile'
+                                        <li className='mb-[10px] border-top-mobile'><Link to='/login'>Log In</Link></li>
+                                    </>
+                                }
+                                <li className='mb-[10px] border-top-mobile'><Link to='/'>Home</Link></li>
+                                <li className='mb-[10px] border-top-mobile'><Link to='/blog'>Blog</Link></li>
+                                <li className='mb-[10px] border-top-mobile'><Link to='/portfolio'>MyPortfolio</Link></li>
+
+
+                            </div>
+                        </ul>
+
                         <div>
                             <img src={logo} alt="" />
                         </div>
@@ -68,7 +83,7 @@ const Header = () => {
                         </ul>
                     </div>
                     {user && <div onClick={handleNavigate} className="navbar-end lg:hidden">
-                        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden text-[#282828]">Dashboard</label>
+                        <label htmlFor="my-drawer-2" className="active-btn  drawer-button lg:hidden text-[#282828]">Dashboard</label>
                     </div>}
                 </div>
             </div>

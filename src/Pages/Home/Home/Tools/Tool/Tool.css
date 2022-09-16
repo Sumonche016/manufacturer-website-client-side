@@ -61,10 +61,6 @@
   border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.buy-now {
-  transform: translateY(-40px);
-  /* visibility: hidden;
-  opacity: 0; */
-
-  transition: all 0.5s;
+.css-1s2u09g-control {
+  z-index: -1 !important;
 }

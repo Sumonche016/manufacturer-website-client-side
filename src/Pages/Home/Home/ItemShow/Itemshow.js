@@ -31,7 +31,7 @@ const Itemshow = () => {
     return (
         <div className='py-10'>
             <div className='flex justify-center items-center mb-4'>
-                <div className='text-center'>
+                <div className='text-center z-[-1]'>
                     <h1 className='uppercase text-secondary text-[14px] top-sell'>Top sell in the week</h1>
                     <h1 className=' best-sell relative'>Best Sellers</h1>
                 </div>

@@ -12,12 +12,12 @@ const Tool = ({ tool }) => {
     }
     return (
         <div>
-            <div className="card-compact card bg-white border-card">
+            <div className=" bg-white border-card">
                 <div className='block'>
                     <img className='w-full align-middle border-bottom' src={img} alt="Shoes" />
 
                 </div>
-                <div className=" text-center icon-box mt-3">
+                <div className=" text-center icon-box">
                     <div className='grid grid-cols-6 bg-primary text-white h-[44px] buy-now'>
                         <div className=' flex justify-center items-center hover:bg-secondary transition-all duration-500 cursor-pointer'>
                             <BsSuitHeartFill />
@@ -29,7 +29,7 @@ const Tool = ({ tool }) => {
                             <BsFillCartCheckFill />
                         </div>
                     </div>
-                    <h2 className="text-center uppercase text-[14px] heading-tools text-primary hover:text-secondary transition-all mb-[5px]">{name}</h2>
+                    <h2 className="text-center uppercase text-[14px] heading-tools text-primary hover:text-secondary transition-all my-[10px]">{name}</h2>
                     {/* <p className='text-[17px] mt-2 font-sans text-[#222732]'>{description.slice(0, 100)}</p> */}
                     <div>
                         <i className="fas fa-star text-[#CCCCCC] mx-[1px] text-[12px]"></i>
