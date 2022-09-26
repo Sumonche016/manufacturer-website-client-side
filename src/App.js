@@ -10,7 +10,7 @@ import Login from './Pages/Login/Login/Login/Login';
 import Register from './Pages/Login/Registration/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import NotFound from './Pages/NotFound/NotFound';
-import Footer from './Pages/Shared/footer/Footer';
+import Footer from './Pages/Shared/Footer/Footer'
 import Header from './Pages/Shared/Header/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

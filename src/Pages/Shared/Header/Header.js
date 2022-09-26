@@ -45,15 +45,23 @@ const Header = () => {
 
 
     </>
+
+    const handleHamburger = () => {
+        setIsopen(!isopen)
+    }
+
+
+
     return (
         <div className=''>
             <div className='w-full md:w-[85%] mx-auto'>
                 <div className="navbar bg-white text-white  font-medium flex sticky top-0 left-0 justify-between">
                     <div className="navbar-start flex  w-full justify-start md:justify-between ">
+                        <img onClick={handleHamburger} src={hamburger} className='w-[40px] mr-[10px] md:m-0 cursor-pointer lg:hidden' alt="" />
 
-                        <img onClick={() => setIsopen(!isopen)} src={hamburger} className='w-[40px] mr-[10px] md:m-0 cursor-pointer lg:hidden' alt="" />
                         <ul className={`absolute ${isopen ? 'open' : 'close'}  sidebar top-[5rem] md:hidden bg-[#333]`}>
                             <FaTimes onClick={() => setIsopen(false)} className='cursor-pointer absolute top-[1rem] right-[.8rem]' />
+
                             <div className='mobile-menu p-[20px] text-[14px] uppercase font-medium font-rubik '>
                                 {user ? <>
                                     <button className='btn btn-ghost font-medium btn-user' onClick={logout}>Sign Out {user?.displayName}</button>
@@ -61,7 +69,7 @@ const Header = () => {
 
                                 </> :
                                     <>
-                                        <li onClick={() => setIsopen(false)} className='mb-[10px] border-top-mobile'><Link to='/signup'>Sign Up</Link></li> className='mb-[10px] border-top-mobile'
+                                        <li onClick={() => setIsopen(false)} className='mb-[10px] border-top-mobile'><Link to='/signup'>Sign Up</Link></li>
                                         <li onClick={() => setIsopen(false)} className='mb-[10px] border-top-mobile'><Link to='/login'>Log In</Link></li>
                                     </>
                                 }

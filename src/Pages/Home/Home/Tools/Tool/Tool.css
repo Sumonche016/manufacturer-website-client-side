@@ -62,5 +62,5 @@
 }
 
 .css-1s2u09g-control {
-  z-index: -1 !important;
+  z-index: unset;
 }
