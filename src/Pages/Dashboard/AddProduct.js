@@ -66,7 +66,7 @@ const AddProduct = () => {
             )
 
     };
-    
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -115,18 +115,6 @@ const AddProduct = () => {
                                 {errors?.description?.type === 'required' && <span className='label-text-alt text-red-500'>{errors?.description.message}</span>}
                             </label>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
                         <div className="form-control w-full ">
                             <label className='mb-1 text-[14px]'>Minimum Order</label>
@@ -229,13 +217,6 @@ const AddProduct = () => {
                                 {errors.iamge?.type === 'required' && <span className='label-text-alt text-red-500'>{errors?.image?.message}</span>}
                             </label>
                         </div>
-
-
-
-
-
-
-
 
 
                         <input className='btn mt-2 text-white w-full btn-secondary rounded-none' type="submit" value='Add Product' />
