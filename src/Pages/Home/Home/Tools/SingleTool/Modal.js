@@ -52,7 +52,7 @@ const Modal = ({ tool, setModal, refetch }) => {
 
         }
 
-        fetch('https://fast-forest-54973.herokuapp.com/myorder', {
+        fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/myorder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

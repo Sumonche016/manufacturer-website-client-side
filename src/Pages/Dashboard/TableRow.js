@@ -5,7 +5,7 @@ const TableRow = ({ user, index, refetch }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://fast-forest-54973.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://manufacturer-website-server-side-production-0c7a.up.railway.app/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

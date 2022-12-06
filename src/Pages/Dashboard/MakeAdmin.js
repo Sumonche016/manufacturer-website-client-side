@@ -5,7 +5,7 @@ import TableRow from './TableRow';
 
 const MakeAdmin = () => {
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://fast-forest-54973.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/users', {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

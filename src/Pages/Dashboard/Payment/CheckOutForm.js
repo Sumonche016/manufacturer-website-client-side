@@ -15,7 +15,7 @@ const CheckOutForm = ({ data }) => {
     console.log(data.price)
 
     useEffect(() => {
-        fetch('https://fast-forest-54973.herokuapp.com/create-payment-intent', {
+        fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -81,7 +81,7 @@ const CheckOutForm = ({ data }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://fast-forest-54973.herokuapp.com/payment/${_id}`, {
+            fetch(`https://manufacturer-website-server-side-production-0c7a.up.railway.app/payment/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

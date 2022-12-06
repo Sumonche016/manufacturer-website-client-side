@@ -19,7 +19,7 @@ const Register = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
 
     const navigate = useNavigate()
-    //   hook form 
+    //   hook form
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [token] = useToken(user || guser)
     console.log(token)
@@ -61,6 +61,7 @@ const Register = () => {
                                 }
                                 )}
 
+                                
                             />
                             <label className="label">
                                 {errors.name?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.name.message}</span>}

@@ -5,7 +5,7 @@ import Loading from '../../../Shared/Loading/Loading';
 import Tool from './Tool/Tool';
 
 const Tools = () => {
-    const { data, isLoading } = useQuery('tools', () => fetch('https://fast-forest-54973.herokuapp.com/product').then(res => res.json()))
+    const { data, isLoading } = useQuery('tools', () => fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/product').then(res => res.json()))
     const [show, setShow] = useState(false)
 
     if (isLoading) {

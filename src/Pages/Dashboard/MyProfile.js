@@ -21,7 +21,7 @@ const MyProfile = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        fetch(`https://fast-forest-54973.herokuapp.com/profile/${user?.email}`, {
+        fetch(`https://manufacturer-website-server-side-production-0c7a.up.railway.app/profile/${user?.email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -75,7 +75,7 @@ const MyProfile = () => {
                     console.log(profile)
 
 
-                    fetch(`https://fast-forest-54973.herokuapp.com/myprofile/${user.email}`, {
+                    fetch(`https://manufacturer-website-server-side-production-0c7a.up.railway.app/myprofile/${user.email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

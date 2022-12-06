@@ -23,7 +23,7 @@ const Review = () => {
             description: description
         }
 
-        fetch('https://fast-forest-54973.herokuapp.com/review', {
+        fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

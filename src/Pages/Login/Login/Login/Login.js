@@ -50,25 +50,21 @@ const Login = () => {
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Your Password</span>
+                                <span className="label-text">First Name *</span>
                             </label>
                             <input type="email" placeholder="Email" className="input input-bordered input-error w-full max-w-xs"
-                                {...register('email', {
+                                {...register('firstName', {
                                     required: {
                                         value: true,
                                         message: 'email Is reQuired'
-                                    },
-                                    pattern: {
-                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                        message: 'Provide a valid Email'
                                     }
+
                                 }
                                 )}
 
                             />
                             <label className="label">
-                                {errors.email?.type === 'pattern' && <span className='label-text-alt text-red-500'>{errors.email.message}</span>}
-                                {errors.email?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.email.message}</span>}
+                                {errors.email?.type === 'required' && <span className='label-text-alt text-red-500'>{errors.firstName.message}</span>}
                             </label>
 
 

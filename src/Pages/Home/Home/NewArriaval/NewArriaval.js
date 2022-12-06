@@ -6,7 +6,7 @@ import Tool from '../Tools/Tool/Tool';
 import NewSingleArriaval from './NewSingleArriaval';
 
 const NewArriaval = () => {
-    const { data, isLoading } = useQuery('tools', () => fetch('https://fast-forest-54973.herokuapp.com/product').then(res => res.json()))
+    const { data, isLoading } = useQuery('tools', () => fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/product').then(res => res.json()))
 
 
 

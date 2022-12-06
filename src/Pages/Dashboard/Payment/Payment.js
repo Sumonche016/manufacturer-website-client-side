@@ -14,7 +14,7 @@ const stripePromise = loadStripe('pk_test_51L4kzeDd6detVU1eVEAsTYYuIjEkM1Cf590OW
 const Payment = () => {
     const { id } = useParams()
 
-    const { data, isLoading } = useQuery(['users', id], () => fetch(`https://fast-forest-54973.herokuapp.com/payment/${id}`, {
+    const { data, isLoading } = useQuery(['users', id], () => fetch(`https://manufacturer-website-server-side-production-0c7a.up.railway.app/payment/${id}`, {
         method: "GET",
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

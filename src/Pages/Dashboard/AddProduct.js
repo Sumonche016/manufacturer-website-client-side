@@ -42,7 +42,7 @@ const AddProduct = () => {
 
                     // send data 
 
-                    fetch('https://fast-forest-54973.herokuapp.com/addproduct', {
+                    fetch('https://manufacturer-website-server-side-production-0c7a.up.railway.app/addproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
